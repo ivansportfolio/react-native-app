@@ -1,14 +1,22 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
+import {
+  REACT_APP_API_KEY,
+  REACT_APP_AUTH_DOMAIN,
+  REACT_APP_PROJECT_ID,
+  REACT_APP_STORAGE_BUCKET,
+  REACT_APP_MESSAGING_SENDER_ID,
+  REACT_APP_APP_ID,
+} from '@env';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDweXZ5v233G6yXSb2jVWzyCR94jaQlMQg',
-  authDomain: 'react-native-app-db690.firebaseapp.com',
-  projectId: 'react-native-app-db690',
-  storageBucket: 'react-native-app-db690.appspot.com',
-  messagingSenderId: '377200013692',
-  appId: '1:377200013692:web:6415b328a1f3a9574c34f9',
+  apiKey: `${REACT_APP_API_KEY}`,
+  authDomain: `${REACT_APP_AUTH_DOMAIN}`,
+  projectId: `${REACT_APP_PROJECT_ID}`,
+  storageBucket: `${REACT_APP_STORAGE_BUCKET}`,
+  messagingSenderId: `${REACT_APP_MESSAGING_SENDER_ID}`,
+  appId: `${REACT_APP_APP_ID}`,
 };
 
 firebase.initializeApp(firebaseConfig);
