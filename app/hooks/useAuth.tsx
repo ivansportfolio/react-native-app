@@ -1,10 +1,10 @@
 /* Hooks */
-import { useAuthContext } from '@/context/authContext';
+import { useAuthContext } from '@/app/context/authContext';
 import { projectAuth } from '@/firebase/firebaseSettings';
 import { User } from 'firebase/auth';
 
 export const useAuth = () => {
-  const { userLoginHandler } = useAuthContext();
+  const { userLoginHandler, userLogout } = useAuthContext();
 
   const login = async (email: string, password: string) => {
     try {
@@ -14,8 +14,16 @@ export const useAuth = () => {
       console.log(error);
     }
   };
+  const logout = async () => {
+    try {
+      await projectAuth.signOut();
+      userLogout();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  /* TODO: add logout and register handler */
+  /* TODO: register handler */
 
-  return { login };
+  return { login, logout };
 };
