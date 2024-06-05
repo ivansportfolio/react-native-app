@@ -48,3 +48,15 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+## Generate SVG component from SVG file
+
+- add .svg file into dir assets/app_svg/
+- type in console: npm run svgr
+- The command turns all the .svg files in that location into components, so if we want to turn just one, only one file (of our choice) should be there. If we want to turn a bunch of .svg into a component at once, then we add several files
+
+## Icon use
+
+- Go to www: https://oblador.github.io/react-native-vector-icons/
+- Search for the icon you are interested in
+- Copy the name of the icon (for uniformity, look for icons in the MaterialCommunityIcons category)

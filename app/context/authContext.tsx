@@ -9,6 +9,7 @@ interface AuthState {
 
 interface AuthContextType extends AuthState {
   userLoginHandler: (userData: User) => void;
+  userLogout: () => void;
 }
 
 export const AuthContext = createContext<AuthContextType | null>(null);
@@ -61,10 +62,14 @@ export const AuthContextProvider = ({
     dispatch({ type: 'LOGIN', payload: userData });
   };
 
-  /* TODO: add logout and register handler */
+  const userLogout = () => {
+    dispatch({ type: 'LOGOUT', payload: null });
+  };
+
+  /* TODO: add register handler */
 
   return (
-    <AuthContext.Provider value={{ ...state, userLoginHandler }}>
+    <AuthContext.Provider value={{ ...state, userLoginHandler, userLogout }}>
       {children}
     </AuthContext.Provider>
   );
