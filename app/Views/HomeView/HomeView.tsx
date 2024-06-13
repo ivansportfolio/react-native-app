@@ -9,7 +9,6 @@ import { useAuthContext } from '@/app/context/authContext';
 const HomeView = () => {
   const { logout } = useAuth();
   const { user } = useAuthContext();
-  console.log(user);
 
   return (
     <View>
