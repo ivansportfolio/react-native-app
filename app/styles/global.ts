@@ -4,6 +4,8 @@ export const Color = {
   lightGray: '#dfe1e6',
   darkGrey: '#8a8a8a',
   lemonCream: '#fee590',
+  bitterSweetRed: '#bc4749',
+  yellowGreen: '#a7c957',
 };
 
 export const Spacing = {

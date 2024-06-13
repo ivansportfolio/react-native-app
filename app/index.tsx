@@ -10,6 +10,7 @@ import {
 } from 'react-native-paper';
 
 import MainRoutes from './routes/MainRoutes';
+import { SnackbarContextProvider } from './context/Snackbar/snackbarContext';
 
 const baseVariants = configureFonts({
   config: { fontFamily: 'Poppins-Regular' },
@@ -47,13 +48,15 @@ const Index = () => {
 
   return (
     <PaperProvider theme={theme}>
-      <AuthContextProvider>
-        <View style={indexStyle.mainContainer}>
-          <View style={indexStyle.card}>
-            <MainRoutes />
+      <SnackbarContextProvider>
+        <AuthContextProvider>
+          <View style={indexStyle.mainContainer}>
+            <View style={indexStyle.card}>
+              <MainRoutes />
+            </View>
           </View>
-        </View>
-      </AuthContextProvider>
+        </AuthContextProvider>
+      </SnackbarContextProvider>
     </PaperProvider>
   );
 };
